@@ -1,9 +1,12 @@
 import requests
 import json
+import os
 from pypollen import Pollen
 import notify2
 #Images
-VeryHigh = "/home/les/HighPollen.png"
+cwd = os.getcwd()
+VeryHigh = cwd+"/Images/HighPollen.png"
+print(VeryHigh)
 send_url = 'http://freegeoip.net/json'
 r = requests.get(send_url)
 j = json.loads(r.text)
