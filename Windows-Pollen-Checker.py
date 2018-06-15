@@ -1,10 +1,8 @@
 import requests
 import json
 from pypollen import Pollen
-import time
 from win10toast import ToastNotifier
 toaster = ToastNotifier()
-#Images
 while True:
     send_url = "http://ipinfo.io/json"
     r = requests.get(send_url)
@@ -14,5 +12,5 @@ while True:
     lat = location[0]
     lon = location[1]
     pollen_status = Pollen(lat, lon).pollencount
-    toaster.show_toast("The pollen level at your location is ",pollen_status)
+    toaster.show_toast("The pollen level at your location is ",pollen_status,duration=10)
     time.sleep(15)
