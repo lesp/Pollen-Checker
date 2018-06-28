@@ -14,6 +14,6 @@ while True:
     text = "The pollen level at your location is "+pollen_status
     speech = (gTTS(text=text))
     speech.save(cwd+"/speech.mp3")
-    speech_path = "mpg321 "+cwd+"/speech.mp3"
+    speech_path = "cmdmp3.exe "+cwd+"/speech.mp3"
     os.system(speech_path)
     time.sleep(15)
